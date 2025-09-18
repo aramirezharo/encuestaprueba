@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Calidad de Servicio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        h1 { text-align: center; color: #333; }
+        .pregunta { margin-bottom: 25px; }
+        .opciones label { margin-right: 20px; cursor: pointer; }
+        button { 
+            display: block; width: 100%; padding: 12px; font-size: 16px; 
+            background-color: #007bff; color: white; border: none; 
+            border-radius: 5px; cursor: pointer; 
+        }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Encuesta de Calidad de Servicio</h1>
+    <form id="encuestaForm">
+        <div class="pregunta">
+            <p><strong>P1. Limpieza del área</strong></p>
+            <div class="opciones">
+                <label><input type="radio" name="p1" value="1" required> 1</label>
+                <label><input type="radio" name="p1" value="2"> 2</label>
+                <label><input type="radio" name="p1" value="3"> 3</label>
+                <label><input type="radio" name="p1" value="4"> 4</label>
+                <label><input type="radio" name="p1" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <p><strong>P2. Atención del personal</strong></p>
+            <div class="opciones">
+                <label><input type="radio" name="p2" value="1" required> 1</label>
+                <label><input type="radio" name="p2" value="2"> 2</label>
+                <label><input type="radio" name="p2" value="3"> 3</label>
+                <label><input type="radio" name="p2" value="4"> 4</label>
+                <label><input type="radio" name="p2" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <p><strong>P3. Precio visible</strong></p>
+            <div class="opciones">
+                <label><input type="radio" name="p3" value="1" required> 1</label>
+                <label><input type="radio" name="p3" value="2"> 2</label>
+                <label><input type="radio" name="p3" value="3"> 3</label>
+                <label><input type="radio" name="p3" value="4"> 4</label>
+                <label><input type="radio" name="p3" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <p><strong>P4. Facilidad para encontrar productos</strong></p>
+            <div class="opciones">
+                <label><input type="radio" name="p4" value="1" required> 1</label>
+                <label><input type="radio" name="p4" value="2"> 2</label>
+                <label><input type="radio" name="p4" value="3"> 3</label>
+                <label><input type="radio" name="p4" value="4"> 4</label>
+                <label><input type="radio" name="p4" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <p><strong>P5. Variedad</strong></p>
+            <div class="opciones">
+                <label><input type="radio" name="p5" value="1" required> 1</label>
+                <label><input type="radio" name="p5" value="2"> 2</label>
+                <label><input type="radio" name="p5" value="3"> 3</label>
+                <label><input type="radio" name="p5" value="4"> 4</label>
+                <label><input type="radio" name="p5" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <p><strong>P6. Presentación del personal</strong></p>
+            <div class="opciones">
+                <label><input type="radio" name="p6" value="1" required> 1</label>
+                <label><input type="radio" name="p6" value="2"> 2</label>
+                <label><input type="radio" name="p6" value="3"> 3</label>
+                <label><input type="radio" name="p6" value="4"> 4</label>
+                <label><input type="radio" name="p6" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <p><strong>P7. Calidad del producto</strong></p>
+            <div class="opciones">
+                <label><input type="radio" name="p7" value="1" required> 1</label>
+                <label><input type="radio" name="p7" value="2"> 2</label>
+                <label><input type="radio" name="p7" value="3"> 3</label>
+                <label><input type="radio" name="p7" value="4"> 4</label>
+                <label><input type="radio" name="p7" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <button type="submit">Enviar Respuestas</button>
+    </form>
+    <div id="mensajeExito" style="display: none; text-align: center; color: green; margin-top: 20px;">
+        <p>¡Gracias por tu respuesta!</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
