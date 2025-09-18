@@ -2,7 +2,7 @@ const form = document.getElementById('encuestaForm');
 const mensajeExito = document.getElementById('mensajeExito');
 
 // Reemplaza esta URL con la URL de tu aplicación web de Google Apps Script
-const appScriptURL = 'https://script.google.com/macros/s/TU_ID_DE_DESPLIEGUE/exec'; 
+const appScriptURL = 'https://script.google.com/macros/s/AKfycbzYBuQa19EClr1uyIbyPJfY9pqcXoRCQec_Y_EgIVLGG_Xgm6A1adiRmur7N_oepeg/exec'; 
 
 form.addEventListener('submit', function(e) {
     e.preventDefault(); // Evita el envío tradicional del formulario
@@ -31,3 +31,4 @@ form.addEventListener('submit', function(e) {
         alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
     });
 });
+
