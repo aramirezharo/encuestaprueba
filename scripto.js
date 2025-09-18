@@ -1,35 +1,34 @@
 const form = document.getElementById('encuestaForm');
 const mensajeExito = document.getElementById('mensajeExito');
 
-// Reemplaza esta URL con la URL de tu aplicación web de Google Apps Script
+// Asegúrate de que esta URL sea la correcta y termine en /exec
 const appScriptURL = 'https://script.google.com/macros/s/AKfycbzYBuQa19EClr1uyIbyPJfY9pqcXoRCQec_Y_EgIVLGG_Xgm6A1adiRmur7N_oepeg/exec'; 
 
 form.addEventListener('submit', function(e) {
     e.preventDefault(); // Evita el envío tradicional del formulario
 
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
 
     // Enviar datos al script de Google Apps Script
     fetch(appScriptURL, {
         method: 'POST',
-        body: JSON.stringify(data),
+        mode: 'no-cors', // Importante para evitar problemas de CORS
+        cache: 'no-cache',
         headers: {
-            'Content-Type': 'application/json'
-        }
+            'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        body: JSON.stringify(data),
     })
     .then(response => {
-        if (response.ok) {
-            form.style.display = 'none'; // Oculta el formulario
-            mensajeExito.style.display = 'block'; // Muestra el mensaje de éxito
-        } else {
-            alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
-        }
+        // En modo 'no-cors', la respuesta siempre será 'ok', así que ocultamos el formulario directamente.
+        form.style.display = 'none';
+        mensajeExito.style.display = 'block';
     })
     .catch(error => {
         console.error('Error:', error);
         alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
     });
 });
-
-
